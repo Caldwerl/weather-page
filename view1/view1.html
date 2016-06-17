@@ -1,0 +1,29 @@
+<div ng-repeat="city in citiesCurrent">
+  <div class="jumbotron">
+
+    <span class="row">
+      <h2 class="col-lg-8"><img ng-src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png"> {{city.name}}, {{city.sys.country}}</h2>
+      <div class="col-lg-4">
+        <h3>{{city.weather[0].description | lowercase}}</h3>
+      </div>
+    </span>
+    <hr>
+
+    <span class="row">
+      <p class="col-lg-6">Current Temp:  {{city.main.temp}} &#176;C</p>
+      <p class="col-lg-6">Humidity:  {{city.main.humidity}}%</p>
+    </span>
+
+    <span class="row">
+      <p class="col-lg-6">Clouds:  {{city.clouds.all}}%</p>
+      <p class="col-lg-6">Wind Speed:  {{city.wind.speed}} m/s</p>
+    </span>
+
+    <span class="row">
+      <p class="col-lg-6">Coord:  {{city.coord.lat}}, {{city.coord.lon}}</p>
+      <p class="col-lg-6">Wind Direction:  {{city.wind.deg}}&#176;</p>
+    </span>
+
+    <p></p>
+  </div>
+</div>
