@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="weather-page" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +12,15 @@
   </head>
   <body class="container">
 
-    <nav class="navbar navbar-default">
-      <strong>
-        <h3 class="navbar-text">Empty Datacube</h3>
-        <ul class="nav nav-pills">
-          <li class="navbar-text"><a href="#/view1">Current</a></li>
-          <li class="navbar-text"><a href="#/view2">Five Day</a></li>
-          <li class="navbar-text"><a href="https://github.com/Caldwerl">Github</a></li>
-        </h4>
-      </strong>
+     <nav class="navbar navbar-default">
+      <span class="row">
+        <h3 class="navbar-text text-center col-xs-12">Empty Datacube</h3>
+      </span>
+      <span class="nav nav-pills row">
+        <a class="navbar-text text-center col-xs-4" href="#/view1"><h4>Current</h4></a>
+        <a class="navbar-text text-center col-xs-4" href="#/view2"><h4>Five Day</h4></a>
+        <a class="navbar-text text-center col-xs-3" href="https://github.com/Caldwerl"><h4>Github</h4></a>
+      </span>
     </nav>
 
     <div ng-view></div>
