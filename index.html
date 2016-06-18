@@ -12,16 +12,10 @@
   </head>
   <body class="container">
 
-     <nav class="navbar navbar-default">
-      <span class="row">
-        <h3 class="navbar-text text-center col-xs-12">Empty Datacube</h3>
-      </span>
-      <span class="nav nav-pills row">
-        <a class="navbar-text text-center col-xs-4" href="#/view1"><h4>Current</h4></a>
-        <a class="navbar-text text-center col-xs-4" href="#/view2"><h4>Five Day</h4></a>
-        <a class="navbar-text text-center col-xs-3" href="https://github.com/Caldwerl"><h4>Github</h4></a>
-      </span>
-    </nav>
+      <nav class="navbar navbar-default text-center">
+        <h3 class="navbar-text col-xs-8">Empty Datacube</h3>
+        <a class="navbar-text col-xs-3" href="https://github.com/Caldwerl"><h4>Github</h4></a>
+      </nav>
 
     <div ng-view></div>
 
@@ -31,6 +25,5 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="view1/view1.js"></script>
-    <script src="view2/view2.js"></script>
   </body>
 </html>
