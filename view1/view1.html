@@ -1,29 +1,36 @@
-<div ng-repeat="city in citiesCurrent">
-  <div class="jumbotron">
-
-    <span class="row">
-      <h2 class="col-lg-8"><img ng-src="http://openweathermap.org/img/w/{{city.weather[0].icon}}.png"> {{city.name}}, {{city.sys.country}}</h2>
-      <div class="col-lg-4">
-        <h3>{{city.weather[0].description | lowercase}}</h3>
-      </div>
+<form name="searchForm" ng-submit="search()" class="text-center">
+  <div class="input-group col-xs-12 col-md-4 col-md-offset-4">
+    <input class="form-control" ng-model="searchInput">
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-success">Search</button>
     </span>
-    <hr>
+  </div>
+</form>
+<br>
 
-    <span class="row">
-      <p class="col-lg-6">Current Temp:  {{city.main.temp}} &#176;C</p>
-      <p class="col-lg-6">Humidity:  {{city.main.humidity}}%</p>
-    </span>
+<div class="panel panel-default" ng-if="searchComplete">
+  <div class="panel-heading">
+    <div class="row">
+      <h2 class="col-md-8 col-xs-12"><img ng-src="http://openweathermap.org/img/w/{{cityWeatherData.weather[0].icon}}.png"> {{cityWeatherData.name}}, {{cityWeatherData.sys.country}}</h2>
+      <span class="col-md-4 col-xs-12">
+        <h3>{{cityWeatherData.weather[0].description | lowercase}}</h3>
+      </span>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <h4 class="col-md-6 col-xs-12">Current Temp: {{cityWeatherData.main.temp}}&#176;C</h4>
+      <h4 class="col-md-6 col-xs-12">Humidity: {{cityWeatherData.main.humidity}}%</h4>
+    </div>
 
-    <span class="row">
-      <p class="col-lg-6">Clouds:  {{city.clouds.all}}%</p>
-      <p class="col-lg-6">Wind Speed:  {{city.wind.speed}} m/s</p>
-    </span>
+    <div class="row">
+      <h4 class="col-md-6 col-xs-12">Clouds: {{cityWeatherData.clouds.all}}%</h4>
+      <h4 class="col-md-6 col-xs-12">Wind Speed: {{cityWeatherData.wind.speed}} m/s</h4>
+    </div>
 
-    <span class="row">
-      <p class="col-lg-6">Coord:  {{city.coord.lat}}, {{city.coord.lon}}</p>
-      <p class="col-lg-6">Wind Direction:  {{city.wind.deg}}&#176;</p>
-    </span>
-
-    <p></p>
+    <div class="row">
+      <h4 class="col-md-6 col-xs-12">Coord: {{cityWeatherData.coord.lat}}, {{cityWeatherData.coord.lon}}</h4>
+      <h4 class="col-md-6 col-xs-12">Wind Direction: {{cityWeatherData.wind.deg}}&#176;</h4>
+    </div>
   </div>
 </div>

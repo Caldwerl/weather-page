@@ -1,12 +1,15 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('weather-page', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'weather-page.view1'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider
+        .when('/search', {
+            templateUrl: 'view1/view1.html',
+            controller: 'View1Ctrl'
+        })
+        .otherwise({redirectTo: '/search'});
 }]);
