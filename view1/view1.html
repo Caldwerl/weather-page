@@ -34,7 +34,7 @@
 
     <div class="row">
       <h4 class="col-md-6 col-xs-12">Coord: <a href="https://www.google.com/maps/preview/@{{cityWeatherData.coord.lat}},{{cityWeatherData.coord.lon}},12z" target="_blank">{{cityWeatherData.coord.lat}}, {{cityWeatherData.coord.lon}}</a></h4>
-      <h4 class="col-md-6 col-xs-12">Wind Direction: {{cityWeatherData.wind.deg}}&#176;</h4>
+      <h4 class="col-md-6 col-xs-12">Wind Direction: <span class="glyphicon glyphicon-arrow-up" style="transform: rotate({{cityWeatherData.wind.deg}}deg);"></span> {{cityWeatherData.wind.deg}}&#176;</h4>
     </div>
   </div>
 </div>
