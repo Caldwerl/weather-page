@@ -14,12 +14,16 @@
       <h2 class="col-md-8 col-xs-12"><img ng-src="http://openweathermap.org/img/w/{{cityWeatherData.weather[0].icon}}.png"> {{cityWeatherData.name}}, {{cityWeatherData.sys.country}}</h2>
       <span class="col-md-4 col-xs-12">
         <h3>{{cityWeatherData.weather[0].description | lowercase}}</h3>
+        <div class="btn-group pull-right">
+          <button class="btn btn-default" ng-disabled="cityWeatherData.celsius" ng-click="switchCF()">&#176;C</button>
+          <button class="btn btn-default" ng-disabled="!cityWeatherData.celsius" ng-click="switchCF()">&#176;F</button>
+        </div>
       </span>
     </div>
   </div>
   <div class="panel-body">
     <div class="row">
-      <h4 class="col-md-6 col-xs-12">Current Temp: {{cityWeatherData.main.temp}}&#176;C</h4>
+      <h4 class="col-md-6 col-xs-12">Current Temp: {{cityWeatherData.main.temp}}&#176;<span ng-if="cityWeatherData.celsius">C</span><span ng-if="!cityWeatherData.celsius">F</span></h4>
       <h4 class="col-md-6 col-xs-12">Humidity: {{cityWeatherData.main.humidity}}%</h4>
     </div>
 
@@ -30,7 +34,7 @@
 
     <div class="row">
       <h4 class="col-md-6 col-xs-12">Coord: <a href="https://www.google.com/maps/preview/@{{cityWeatherData.coord.lat}},{{cityWeatherData.coord.lon}},12z" target="_blank">{{cityWeatherData.coord.lat}}, {{cityWeatherData.coord.lon}}</a></h4>
-      <h4 class="col-md-6 col-xs-12">Wind Direction: {{cityWeatherData.wind.deg}}&#176;</h4>
+      <h4 class="col-md-6 col-xs-12">Wind Direction: <span class="glyphicon glyphicon-arrow-up" style="transform: rotate({{cityWeatherData.wind.deg}}deg);"></span> {{cityWeatherData.wind.deg}}&#176;</h4>
     </div>
   </div>
 </div>
