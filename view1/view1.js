@@ -21,8 +21,9 @@ angular.module('weather-page.view1', ['ngRoute'])
         $scope.cityWeatherData = res.data;
 
         $scope.cityWeatherData.celsius = true;
-        $scope.cityWeatherData.tempC = $scope.cityWeatherData.main.temp;
-        $scope.cityWeatherData.tempF = convertCtoF($scope.cityWeatherData.main.temp);
+        $scope.cityWeatherData.tempC = $scope.cityWeatherData.main.temp.toFixed(1);
+        $scope.cityWeatherData.tempF = convertCtoF($scope.cityWeatherData.main.temp).toFixed(1);
+        $scope.cityWeatherData.main.temp = $scope.cityWeatherData.tempC;
 
         $scope.searchComplete = true;
     });

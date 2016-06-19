@@ -15,8 +15,8 @@
       <span class="col-md-4 col-xs-12">
         <h3>{{cityWeatherData.weather[0].description | lowercase}}</h3>
         <div class="btn-group pull-right">
-          <button class="btn btn-default" ng-disabled="cityWeatherData.celsius" ng-click="switchCF()">C</button>
-          <button class="btn btn-default" ng-disabled="!cityWeatherData.celsius" ng-click="switchCF()">F</button>
+          <button class="btn btn-default" ng-disabled="cityWeatherData.celsius" ng-click="switchCF()">&#176;C</button>
+          <button class="btn btn-default" ng-disabled="!cityWeatherData.celsius" ng-click="switchCF()">&#176;F</button>
         </div>
       </span>
     </div>
