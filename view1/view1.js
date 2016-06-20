@@ -18,7 +18,7 @@ angular.module('weather-page.view1', ['ngRoute'])
   $scope.search = function () {
     $http.get('http://api.openweathermap.org/data/2.5/weather?q=' + $scope.searchInput.trim() + '&APPID=' + query.key + '&units=metric')
       .then(function (res) {
-        $scope.cityWeatherData = res.data;
+        $scope.cityWeatherData = angular.copy(res.data);
 
         $scope.cityWeatherData.celsius = true;
         $scope.cityWeatherData.tempC = $scope.cityWeatherData.main.temp.toFixed(1);
