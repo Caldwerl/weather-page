@@ -1,5 +1,5 @@
 <form name="searchForm" ng-submit="search()" class="text-center">
-  <div class="input-group col-xs-12 col-md-4 col-md-offset-4">
+  <div class="input-group col-xs-12 col-sm-4 col-sm-offset-4">
     <input class="form-control" ng-model="searchInput">
     <span class="input-group-btn">
       <button type="submit" class="btn btn-success">Search</button>
@@ -11,8 +11,10 @@
 <div class="panel panel-default" ng-if="searchComplete">
   <div class="panel-heading">
     <div class="row">
-      <h2 class="col-md-8 col-xs-12"><img ng-src="http://openweathermap.org/img/w/{{cityWeatherData.weather[0].icon}}.png"> {{cityWeatherData.name}}, {{cityWeatherData.sys.country}}</h2>
-      <span class="col-md-4 col-xs-12">
+      <h2 class="col-sm-8 col-xs-12">
+        <img ng-src="http://openweathermap.org/img/w/{{cityWeatherData.weather[0].icon}}.png"> {{cityWeatherData.name}}, {{cityWeatherData.sys.country}}
+      </h2>
+      <span class="col-sm-4 col-xs-12">
         <h3>{{cityWeatherData.weather[0].description | lowercase}}</h3>
         <div class="btn-group pull-right">
           <button class="btn btn-default" ng-disabled="cityWeatherData.celsius" ng-click="switchCF()">&#176;C</button>
@@ -22,19 +24,43 @@
     </div>
   </div>
   <div class="panel-body">
-    <div class="row">
-      <h4 class="col-md-6 col-xs-12">Current Temp: {{cityWeatherData.main.temp}}&#176;<span ng-if="cityWeatherData.celsius">C</span><span ng-if="!cityWeatherData.celsius">F</span></h4>
-      <h4 class="col-md-6 col-xs-12">Humidity: {{cityWeatherData.main.humidity}}%</h4>
+    <div class="col-sm-6">
+      <h4>
+        <span class="col-xs-6 text-right">Current Temp:</span>{{cityWeatherData.main.temp}}&#176;
+        <span ng-if="cityWeatherData.celsius">C</span>
+        <span ng-if="!cityWeatherData.celsius">F</span>
+      </h4>
+      <h4>
+        <span class="col-xs-6 text-right">High Temp:</span>{{cityWeatherData.main.temp_max}}&#176;
+        <span ng-if="cityWeatherData.celsius">C</span>
+        <span ng-if="!cityWeatherData.celsius">F</span>
+      </h4>
+      <h4>
+        <span class="col-xs-6 text-right">Low Temp:</span>{{cityWeatherData.main.temp_min}}&#176;
+        <span ng-if="cityWeatherData.celsius">C</span>
+        <span ng-if="!cityWeatherData.celsius">F</span>
+      </h4>
+      <h4>
+        <span class="col-xs-6 text-right">Coord:</span>
+        <a href="https://www.google.com/maps/preview/@{{cityWeatherData.coord.lat}},{{cityWeatherData.coord.lon}},12z" target="_blank">{{cityWeatherData.coord.lat}}, {{cityWeatherData.coord.lon}}</a>
+      </h4>
     </div>
 
-    <div class="row">
-      <h4 class="col-md-6 col-xs-12">Clouds: {{cityWeatherData.clouds.all}}%</h4>
-      <h4 class="col-md-6 col-xs-12">Wind Speed: {{cityWeatherData.wind.speed}} m/s</h4>
-    </div>
-
-    <div class="row">
-      <h4 class="col-md-6 col-xs-12">Coord: <a href="https://www.google.com/maps/preview/@{{cityWeatherData.coord.lat}},{{cityWeatherData.coord.lon}},12z" target="_blank">{{cityWeatherData.coord.lat}}, {{cityWeatherData.coord.lon}}</a></h4>
-      <h4 class="col-md-6 col-xs-12">Wind Direction: <span class="glyphicon glyphicon-arrow-up" style="transform: rotate({{cityWeatherData.wind.deg}}deg);"></span> {{cityWeatherData.wind.deg}}&#176;</h4>
+    <div class="col-sm-6">
+      <h4>
+        <span class="col-xs-6 text-right">Humidity:</span>
+        <span>{{cityWeatherData.main.humidity}}%</span>
+      </h4>
+      <h4>
+        <span class="col-xs-6 text-right">Clouds:</span>{{cityWeatherData.clouds.all}}%
+      </h4>
+      <h4>
+        <span class="col-xs-6 text-right">Wind Direction:</span>
+        <span class="glyphicon glyphicon-arrow-up" style="transform: rotate({{cityWeatherData.wind.deg}}deg);"></span> {{cityWeatherData.wind.deg}}&#176;
+      </h4>
+      <h4>
+        <span class="col-xs-6 text-right">Wind Speed:</span>{{cityWeatherData.wind.speed}} m/s
+      </h4>
     </div>
   </div>
 </div>
