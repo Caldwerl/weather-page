@@ -25,28 +25,28 @@
   </div>
   <div class="panel-body">
     <div class="col-sm-6">
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">Current Temp:</span>
         <span class="col-xs-6">{{cityWeatherData.main.temp}}&#176;
           <span ng-if="cityWeatherData.celsius">C</span>
           <span ng-if="!cityWeatherData.celsius">F</span>
         </span>
       </h4>
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">High Temp:</span>
         <span class="col-xs-6">{{cityWeatherData.main.temp_max}}&#176;
           <span ng-if="cityWeatherData.celsius">C</span>
           <span ng-if="!cityWeatherData.celsius">F</span>
         </span>
       </h4>
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">Low Temp:</span>
         <span class="col-xs-6">{{cityWeatherData.main.temp_min}}&#176;
           <span ng-if="cityWeatherData.celsius">C</span>
           <span ng-if="!cityWeatherData.celsius">F</span>
         </span>
       </h4>
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">Coord:</span>
         <span class="col-xs-6">
           <a href="https://www.google.com/maps/preview/@{{cityWeatherData.coord.lat}},{{cityWeatherData.coord.lon}},12z" target="_blank">{{cityWeatherData.coord.lat}}, {{cityWeatherData.coord.lon}}</a>
@@ -55,21 +55,21 @@
     </div>
 
     <div class="col-sm-6">
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">Humidity:</span>
         <span class="col-xs-6">{{cityWeatherData.main.humidity}}%</span>
       </h4>
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">Clouds:</span>
         <span class="col-xs-6">{{cityWeatherData.clouds.all}}%</span>
       </h4>
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">Wind Direction:</span>
         <span class="col-xs-6">
           <span class="glyphicon glyphicon-arrow-up" style="transform: rotate({{cityWeatherData.wind.deg}}deg);"></span> {{cityWeatherData.wind.deg}}&#176;
         </span>
       </h4>
-      <h4>
+      <h4 class="row">
         <span class="col-xs-6 text-right">Wind Speed:</span>
         <span class="col-xs-6">{{cityWeatherData.wind.speed}} m/s</span>
       </h4>
