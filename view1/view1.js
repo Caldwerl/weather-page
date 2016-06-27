@@ -37,6 +37,8 @@ angular.module('weather-page.view1', ['ngRoute'])
         $scope.cityWeatherData.main.temp_min = temp_minC;
         $scope.cityWeatherData.main.temp_max = temp_maxC;
 
+        $scope.timeStamp = new Date();
+
         $scope.searchComplete = true;
     });
   };
