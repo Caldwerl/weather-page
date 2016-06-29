@@ -94,6 +94,7 @@ var WeatherPanel = React.createClass({
         );
     },
     render: function () {
+        console.log({transform: [{rotate: this.props.data.wind.deg + 'deg'}]});
         return (
             <Panel header={this.header()}>
                 <Col sm={6}>
@@ -152,7 +153,9 @@ var WeatherPanel = React.createClass({
                             <h3 className="pull-right">Wind Direction:</h3>
                         </Col>
                         <Col sm={6}>
-                            <h3><Glyphicon glyph="arrow-up" style={'transform: rotate(' + this.props.wind.deg + 'deg);'} />{this.props.wind.deg}&#176;</h3>
+                            <h3>
+                                <Glyphicon glyph="arrow-up" style={{transform: 'rotate(' + this.props.data.wind.deg + 'deg)'}} />{this.props.data.wind.deg}&#176;
+                            </h3>
                         </Col>
                     </Row>
                     <Row>
@@ -160,7 +163,7 @@ var WeatherPanel = React.createClass({
                             <h3 className="pull-right">Wind Speed:</h3>
                         </Col>
                         <Col sm={6}>
-                            <h3>{this.props.wind.speed} m/s</h3>
+                            <h3>{this.props.data.wind.speed} m/s</h3>
                         </Col>
                     </Row>
                 </Col>
