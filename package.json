@@ -18,8 +18,11 @@
   "homepage": "https://github.com/Caldwerl/weather-page#readme",
   "dependencies": {
     "jquery": "^3.0.0",
+    "moment": "^2.13.0",
     "react": "^15.1.0",
     "react-bootstrap": "^0.29.4",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-time": "^4.2.0",
+    "whatwg-fetch": "^1.0.0"
   }
 }
