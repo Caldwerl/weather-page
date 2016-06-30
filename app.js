@@ -75,6 +75,8 @@ var WeatherSearchForm = React.createClass({
                 console.log('CALL RESPONSE', json);
                 json = this.setTemps(json);
                 json.timeStamp = moment().format('LLL');
+                json.precipitation = (json.rain) ? json.rain[Object.keys(json.rain)[0]] : 0;
+                json.precipitation = (json.snow) ? json.snow[Object.keys(json.rain)[0]] : json.precipitation;
                 json.wind.deg = json.wind.deg ? json.wind.deg.toFixed(0) : 0;
                 this.setState({data: json, searchComplete: true});
             }.bind(this));
@@ -175,6 +177,14 @@ var WeatherPanel = React.createClass({
                     </Row>
                     <Row>
                         <Col sm={6}>
+                            <h3 className="pull-right">Pressure:</h3>
+                        </Col>
+                        <Col sm={6}>
+                            <h3>{this.props.data.main.pressure} hPa</h3>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={6}>
                             <h3 className="pull-right">Coord:</h3>
                         </Col>
                         <Col sm={6}>
@@ -183,6 +193,14 @@ var WeatherPanel = React.createClass({
                     </Row>
                 </Col>
                 <Col sm={6}>
+                    <Row>
+                        <Col sm={6}>
+                            <h3 className="pull-right">Precipitation:</h3>
+                        </Col>
+                        <Col sm={6}>
+                            <h3>{this.props.data.precipitation}mm</h3>
+                        </Col>
+                    </Row>
                     <Row>
                         <Col sm={6}>
                             <h3 className="pull-right">Humidity:</h3>
